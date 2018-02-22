@@ -33,7 +33,6 @@ var pageSize: CGSize! // set as a global variable
     // for auto incrementing file if exists
     while fileManager.fileExists(atPath: newPdfPathWithFileName)
     {
-        // logInfo { "file already exist. trying new filename" }
         counter += 1
         newFileName = "MyDoc(\(counter)).pdf"
         newPdfPathWithFileName = documentDirectory.appending("/" + (newFileName as String))
