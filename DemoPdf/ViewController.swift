@@ -21,39 +21,30 @@ class ViewController: UIViewController
     {
         logInfo { "entering: \(#function)" }
         pageSize = CGSize(width: 850, height: 1100) // size of the page, 8.5 by 11 inch
-        // let fileName: NSString = "MyDoc.pdf"
 
         let path: NSArray = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
         let documentDirectory: AnyObject = path.object(at: 0) as AnyObject
 
-        let fileName = "MyDoc.pdf"
+        let fileName = "MyDoc.pdf" // name of saved file
+        var newFileName = ""
+        let fileManager = FileManager.default
+        var counter = 0
 
-        logInfo { "fileName: \(fileName)" }
+        // logInfo { "fileName: \(fileName)" }
 
         let pdfPathWithFileName = documentDirectory.appending("/" + (fileName as String))
         var newPdfPathWithFileName = pdfPathWithFileName
 
-        logInfo { "pdfPathWithFileName: \(pdfPathWithFileName)" }
+        // logInfo { "pdfPathWithFileName: \(pdfPathWithFileName)" }
 
-        // added code for auto incrementing file if exists
-        // ===========================================================================================================
-        var newFileName = ""
-
-        let fileManager = FileManager.default
-        var counter = 0
+        // for auto incrementing file if exists
         while fileManager.fileExists(atPath: newPdfPathWithFileName)
         {
-            logInfo { "file already exist. trying new filename" }
+            // logInfo { "file already exist. trying new filename" }
             counter += 1
             newFileName = "MyDoc(\(counter)).pdf"
             newPdfPathWithFileName = documentDirectory.appending("/" + (newFileName as String))
-//            guard (newURL.path) != newURL.path else
-//            {
-//                // Handle error (shouldn't happen anyway)
-//                return
-//            }
         }
-        // ===========================================================================================================
 
         // lines written to get the document directory path for the generated pdf file.
         if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path
@@ -101,6 +92,7 @@ class ViewController: UIViewController
 
         context.setFillColor(UIColor.orange.cgColor)
 
+        // where the text begins and ends on the pdf page
         let textRect: CGRect = CGRect(x: 50, y: 50, width: pageSize.width - 180, height: pageSize.height - 100)
         let myString: NSString = txtView.text! as NSString
         let paraStyle = NSMutableParagraphStyle()
