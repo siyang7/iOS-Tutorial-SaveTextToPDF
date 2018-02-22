@@ -1,6 +1,6 @@
-## Save text from a UITextView to PDF Tutorial
+# Save text from a UITextView to PDF Tutorial
 
-#### The following tutorial code is put into ViewController.swift
+### The following tutorial code is put into ViewController.swift
 
 #### Declare variables for setting the page size of the PDF after generating and create an outlet for a textview
 
@@ -12,7 +12,7 @@ var pageSize: CGSize! // set as a global variable
 @IBOutlet var txtView: UITextView!
 ```
 
-#### Create a button that as an action to generate the PDF
+### Create a button that as an action to generate the PDF
 
 ```
 @IBAction func btnGeneratePDF(_: AnyObject)
@@ -48,7 +48,7 @@ var pageSize: CGSize! // set as a global variable
 }
 ```
 
-#### The logic for the function that generates the PDF
+### The logic for the function that generates the PDF
 ```
 func generatePDFs(filePath: String)
 {
@@ -63,7 +63,7 @@ func generatePDFs(filePath: String)
 }
 ```
 
-#### Draws the custom background view to display the text & image in the PDF
+### Draws the custom background view to display the text & image in the PDF
 ```
 func drawBackground()
 {
@@ -75,7 +75,7 @@ func drawBackground()
 }
 ```
 
-#### Draws the custom textview to display the text that will be entered into the PDF
+### Draws the custom textview to display the text that will be entered into the PDF
 ```
 func drawText()
 {
