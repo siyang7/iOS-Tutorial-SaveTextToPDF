@@ -2,7 +2,7 @@
 
 ### The following tutorial code is put into ViewController.swift
 
-#### Declare variables for setting the page size of the PDF after generating and create an outlet for a textview
+### Declare variables for setting the page size of the PDF after generating and create an outlet for a textview
 
 ```
 var pageSize: CGSize! // set as a global variable
