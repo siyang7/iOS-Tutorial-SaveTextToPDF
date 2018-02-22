@@ -1,0 +1,17 @@
+PODS:
+  - SwiftFormat/CLI (0.32.2)
+  - TraceLog (2.1.0):
+    - TraceLog/Swift (= 2.1.0)
+  - TraceLog/Swift (2.1.0)
+
+DEPENDENCIES:
+  - SwiftFormat/CLI
+  - TraceLog
+
+SPEC CHECKSUMS:
+  SwiftFormat: 9db2ffa51139d7aea21a4eb90a7f7158a34cb6b5
+  TraceLog: 0d0700cc6cbe4b1138410a6a29440f5b5801d218
+
+PODFILE CHECKSUM: 2948a8c827efdcfadcf21a679026513167b81600
+
+COCOAPODS: 1.4.0

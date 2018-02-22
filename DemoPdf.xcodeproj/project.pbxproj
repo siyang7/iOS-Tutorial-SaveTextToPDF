@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8EF12BD13D4D34A2C2FD9F6 /* Pods_DemoPdf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C514309A33FC4E2A58167B /* Pods_DemoPdf.framework */; };
 		F80161B3203EAA3000133E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80161B2203EAA3000133E25 /* AppDelegate.swift */; };
 		F80161B5203EAA3000133E25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80161B4203EAA3000133E25 /* ViewController.swift */; };
 		F80161B8203EAA3000133E25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80161B6203EAA3000133E25 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D65F0237172E444C82D98F7 /* Pods-DemoPdf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPdf.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoPdf/Pods-DemoPdf.release.xcconfig"; sourceTree = "<group>"; };
+		20F07F230ED3B5ACD20D918D /* Pods-DemoPdf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoPdf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoPdf/Pods-DemoPdf.debug.xcconfig"; sourceTree = "<group>"; };
+		50C514309A33FC4E2A58167B /* Pods_DemoPdf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoPdf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80161AF203EAA3000133E25 /* DemoPdf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoPdf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80161B2203EAA3000133E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F80161B4203EAA3000133E25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EF12BD13D4D34A2C2FD9F6 /* Pods_DemoPdf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41261EA54AD6E81B9E0B4E9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20F07F230ED3B5ACD20D918D /* Pods-DemoPdf.debug.xcconfig */,
+				0D65F0237172E444C82D98F7 /* Pods-DemoPdf.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		59DCC46BA26BC72374D5397E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50C514309A33FC4E2A58167B /* Pods_DemoPdf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F80161A6203EAA3000133E25 = {
 			isa = PBXGroup;
 			children = (
 				F80161B1203EAA3000133E25 /* DemoPdf */,
 				F80161B0203EAA3000133E25 /* Products */,
+				41261EA54AD6E81B9E0B4E9B /* Pods */,
+				59DCC46BA26BC72374D5397E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80161C1203EAA3000133E25 /* Build configuration list for PBXNativeTarget "DemoPdf" */;
 			buildPhases = (
+				049FA5A21759E66C3DC7CCA6 /* [CP] Check Pods Manifest.lock */,
 				F80161AB203EAA3000133E25 /* Sources */,
 				F80161AC203EAA3000133E25 /* Frameworks */,
 				F80161AD203EAA3000133E25 /* Resources */,
+				84FB3EF5CA91948CE9F1F8BB /* [CP] Embed Pods Frameworks */,
+				F7E62D70ED917B526994FD82 /* [CP] Copy Pods Resources */,
+				F80161C4203EAC9300133E25 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,6 +158,73 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		049FA5A21759E66C3DC7CCA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoPdf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84FB3EF5CA91948CE9F1F8BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DemoPdf/Pods-DemoPdf-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TraceLog/TraceLog.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TraceLog.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoPdf/Pods-DemoPdf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7E62D70ED917B526994FD82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DemoPdf/Pods-DemoPdf-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F80161C4203EAC9300133E25 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}\" --enable blankLinesAtEndOfScope,blankLinesBetweenScopes,braces,consecutiveBlankLines,consecutiveSpaces,hoistPatternLet,indent,linebreakAtEndOfFile,linebreaks,numberFormatting,ranges,redundantBackticks,redundantGet,redundantLet,redundantNilInit,redundantParens,redundantPattern,redundantRawValues,redundantReturn,redundantSelf,redundantVoidReturnType,redundantInit,semicolons,spaceAroundBraces,spaceAroundBrackets,spaceAroundComments,spaceAroundGenerics,spaceAroundOperators,spaceAroundParens,spaceInsideBraces,spaceInsideBrackets,spaceInsideComments,spaceInsideGenerics,spaceInsideParens,specifiers,trailingClosures,trailingCommas,trailingSpace,todos,unusedArguments,void,wrapArguments --disable elseOnSameLine,fileHeader --allman true --binarygrouping 4,8 --commas always --comments indent --decimalgrouping 3,6 --empty void --experimental disabled --exponentcase uppercase --hexgrouping 4,8 --hexliteralcase uppercase --ifdef indent --indent 4 --insertlines enabled --linebreaks lf --octalgrouping 4,8 --patternlet hoist --ranges spaced --removelines enabled --semicolons inline --self remove --stripunusedargs always --trimwhitespace always --wraparguments afterfirst --wrapelements beforefirst";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F80161AB203EAA3000133E25 /* Sources */ = {
@@ -272,6 +367,7 @@
 		};
 		F80161C2203EAA3000133E25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20F07F230ED3B5ACD20D918D /* Pods-DemoPdf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +383,7 @@
 		};
 		F80161C3203EAA3000133E25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D65F0237172E444C82D98F7 /* Pods-DemoPdf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
